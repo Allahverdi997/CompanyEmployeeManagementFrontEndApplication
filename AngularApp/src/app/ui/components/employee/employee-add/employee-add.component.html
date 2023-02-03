@@ -1,0 +1,32 @@
+<form class="container-fluid" [formGroup]="cardForm" (ngSubmit)="add()">
+    <div class="row">
+    <div class="form-group col-md-4">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" formControlName="name">
+      <small id="emailHelp" class="form-text text-muted" *ngIf="cardForm.get('name')?.errors?.['required']">Bos gecilemez</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="exampleInputPassword1">Surname</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Surname" formControlName="surname">
+      <small id="emailHelp" class="form-text text-muted" *ngIf="cardForm.get('description')?.errors?.['required']">Bos gecilemez</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Department</label>
+      <select
+    class="custom-select mb-3"
+    formControlName="departmentId"
+  >
+    <option value="">Choose Department</option>
+    <option *ngFor="let dep of departments" [ngValue]="dep.id">
+      {{ dep.name }}
+    </option>
+  </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputPassword4">Dogum Tarixi</label>
+      <input type="date" class="form-control" id="inputPassword4" formControlName="birthDate">
+    </div>
+    <br>
+</div>
+    <button type="submit" [disabled]="cardForm.invalid" class="btn btn-primary">Submit</button>
+  </form>

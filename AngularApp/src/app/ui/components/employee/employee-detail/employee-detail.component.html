@@ -1,0 +1,29 @@
+<div class="form-row container-fluid" >
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" id="inputEmail4" [value]="employee?.name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Department</label>
+            <input type="text" class="form-control" id="inputPassword4" [value]="employee?.departmentName">
+          </div>
+    </div>
+      
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Soyad</label>
+            <input type="text" class="form-control" id="inputEmail4" [value]="employee?.surname">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Dogum Tarixi</label>
+            <input type="text" class="form-control" id="inputPassword4" [value]="employee?.birthDate | date">
+          </div>
+    </div>
+    <div class="row">
+      <div class="form-group mt-2">
+        <a class="btn btn-primary" [routerLink]="['/employee/edit',employee?.id]">Edit</a>
+      </div>
+    </div>
+    <br>
+ </div>

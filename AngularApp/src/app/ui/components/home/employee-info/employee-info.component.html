@@ -1,0 +1,12 @@
+<div class="flex-g">
+    <div class="card cardg" *ngFor="let e of employees">
+        <div class="card-body">
+          <h5 class="card-title">{{e.name}}</h5>
+          <p class="card-text">Soyadı: {{e.surname}}</p>
+          <a href="#" class="btn btn-primary" [routerLink]="['/employee',e.id]">Ətraflı</a>  
+      </div>
+        <div class="card-footer">
+          <small class="text-muted">{{e.birthDate | date}}</small>
+        </div>
+    </div>
+    </div>

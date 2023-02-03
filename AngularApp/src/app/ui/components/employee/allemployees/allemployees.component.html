@@ -1,0 +1,28 @@
+
+
+<div class="flex-g container-fluid">
+  <div class="row">
+    <a class="btn btn-primary col-md-12" routerLink="/employee/add">Add</a>
+    <br>
+    <br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">Search</span>
+      </div>
+      <input type="text" class="form-control" id="basic-url" (keyup)="searchword($event.target)" aria-describedby="basic-addon3">
+    </div>
+    <br>
+    <div class="card cardg" *ngFor="let e of employees">
+      <div class="card-body">
+        <h5 class="card-title">{{e.name}}</h5>
+        <p class="card-text">Soyadı: {{e.surname}}</p>
+        <a href="#" class="btn btn-primary" [routerLink]="['/employee',e.id]">Ətraflı</a> 
+        <a href="#" class="btn btn-danger" (click)="delete(e.id)">Sil</a>   
+    </div>
+      <div class="card-footer">
+        <small class="text-muted">{{e.birthDate}}</small>
+      </div>
+  </div>
+  </div>
+  </div>
+    

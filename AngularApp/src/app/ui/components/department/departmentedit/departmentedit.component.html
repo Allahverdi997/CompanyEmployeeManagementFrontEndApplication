@@ -1,0 +1,17 @@
+<form class="form-row container-fluid" [formGroup]="cardForm" (ngSubmit)="edit()" >
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" id="inputEmail4" [ngModel]="department?.name" formControlName="name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4">Department</label>
+            <input type="text" class="form-control" id="inputPassword4" [ngModel]="department?.description" formControlName="description">
+          </div>
+          <div class="form-group col-md-3 mt-4">
+            <button type="submit" [disabled]="cardForm.invalid" class="btn btn-primary">Submit</button>
+          </div>
+          <input type="hidden" [ngModel]="department?.id" formControlName="id">
+        </div>
+    <br>
+</form>

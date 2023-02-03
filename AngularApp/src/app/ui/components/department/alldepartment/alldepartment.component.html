@@ -1,0 +1,20 @@
+
+
+<div class="flex-g container-fluid">
+  <a class="btn btn-primary col-md-12" routerLink="/department/add">Add</a>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon3">Search</span>
+    </div>
+    <input type="text" class="form-control" id="basic-url" (keyup)="searchword($event.target)" aria-describedby="basic-addon3">
+  </div>
+    <div class="card cardg" *ngFor="let d of departments">
+        <div class="card-body">
+          <h5 class="card-title">{{d.name}}</h5>
+          <p class="card-text">{{d.description}}</p>
+          <a href="#" class="btn btn-primary" [routerLink]="['/department',d.id]">Ətraflı</a>
+          <a href="#" class="btn btn-danger" (click)="delete(d.id)">Sil</a>  
+      </div>
+    </div>
+    </div>
+

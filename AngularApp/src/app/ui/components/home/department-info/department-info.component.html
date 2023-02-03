@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;" *ngIf="success">
+    <div class="card-body">
+      <h5 class="card-title">{{department?.name}}</h5>
+      <p class="card-text">{{department?.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li [ngClass]="setClass(d.id)" *ngFor="let d of departments" (click)="changeDepartment(d.id)" [routerLink]="['/withdepartment',d.id]"><a>{{d.name}}</a></li>
+    </ul>
+    <div class="card-body">
+        <a class="btn btn-primary" routerLink="/department">Hamisi</a>
+    </div>
+  </div>
+  <div class="spinner-border text-primary" *ngIf="!success" role="status">
+    <span class="sr-only"></span>
+  </div>
